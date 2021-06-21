@@ -52,6 +52,7 @@ function sendTokenToServer(currentToken) {
       console.log('Токен уже отправлен на сервер.');
   }
 
+  document.querySelector('#subscribe').style.display = 'none';
   document.querySelector('#mytoken').textContent = currentToken;
   document.querySelector('#send').addEventListener('click', function () {
       sendNotification();
