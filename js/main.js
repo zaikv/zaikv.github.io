@@ -73,13 +73,9 @@ function setTokenSentToServer(currentToken) {
 }
 
 function sendNotification() {
-    var key = 'AAAAhb3-PQk:APA91bFa12YwpNtjJ4YMzumX5I8_I90s3lnq-2iOonFqMRrYvtiVRnvmj80LsvU6Ky2xj1hPFrd8kGO58Uq3FjxNoHyUYMgcewPGPtyhgyEMbC8NOq1Za6n9m0T_fZ-7cndnGLWZyumV';
+    let key = 'AAAAhb3-PQk:APA91bFa12YwpNtjJ4YMzumX5I8_I90s3lnq-2iOonFqMRrYvtiVRnvmj80LsvU6Ky2xj1hPFrd8kGO58Uq3FjxNoHyUYMgcewPGPtyhgyEMbC8NOq1Za6n9m0T_fZ-7cndnGLWZyumV';
 
-    console.log('Send notification', notification);
-
-    // hide last notification data
-    info.hide();
-    massage_row.hide();
+    console.log('Send notification');
 
     messaging.getToken()
         .then(function(currentToken) {
