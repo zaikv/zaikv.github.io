@@ -1,6 +1,10 @@
 "use strict";
 
 if ('Notification' in window) {
+  if (Notification.permission === 'granted') {
+        subscribe();
+    }
+
   // по клику, запрашиваем у пользователя разрешение на уведомления и подписываем его
   document.querySelector('#subscribe').addEventListener('click', function () {
       subscribe();
@@ -38,7 +42,7 @@ function sendTokenToServer(currentToken) {
   if (!isTokenSentToServer(currentToken)) {
       console.log('Отправка токена на сервер...');
 
-      document.querySelector('#subscribe').textContent = currentToken;
+      document.querySelector('#mytoken').textContent = currentToken;
 
       /*var url = ''; // адрес скрипта на сервере который сохраняет ID устройства
       $.post(url, {
