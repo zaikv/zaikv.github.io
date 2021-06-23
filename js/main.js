@@ -86,7 +86,7 @@ function sendNotification() {
             fetch('https://fcm.googleapis.com/fcm/send', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'key=' + key, 
+                    'Authorization': 'key=' + key,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
@@ -121,7 +121,6 @@ function showError(error, error_data) {
     if (typeof error_data !== "undefined") {
         console.error(error, error_data);
     } else {
-        alert_message.html(error);
         console.error(error);
     }
 
