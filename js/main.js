@@ -3,6 +3,8 @@
 if ('Notification' in window) {
   messaging.onMessage(function(payload) {
     console.log('onMessage:', payload);
+
+    new Notification(payload.notification.title, payload.notification)
   });
 
   if (Notification.permission === 'granted') {
