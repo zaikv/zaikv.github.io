@@ -74,6 +74,10 @@ function setTokenSentToServer(currentToken) {
 
 function sendNotification() {
     let key = 'AAAAhb3-PQk:APA91bFa12YwpNtjJ4YMzumX5I8_I90s3lnq-2iOonFqMRrYvtiVRnvmj80LsvU6Ky2xj1hPFrd8kGO58Uq3FjxNoHyUYMgcewPGPtyhgyEMbC8NOq1Za6n9m0T_fZ-7cndnGLWZyumV';
+    let notification = {
+      title: "Notification",
+      body: "Body",
+    };
 
     console.log('Send notification');
 
@@ -82,13 +86,14 @@ function sendNotification() {
             fetch('https://fcm.googleapis.com/fcm/send', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'key=' + key,
+                    'Authorization': 'key=' + key, 
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     // Firebase loses 'image' from the notification.
                     // And you must see this: https://github.com/firebase/quickstart-js/issues/71
-                    data: 'notification',
+                    notification: notification,
+                    time_to_live: 900,
                     to: currentToken
                 })
             }).then(function(response) {
