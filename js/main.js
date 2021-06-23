@@ -1,6 +1,10 @@
 "use strict";
 
 if ('Notification' in window) {
+  messaging.onMessage(function(payload) {
+    console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  });
+
   if (Notification.permission === 'granted') {
         subscribe();
   }
