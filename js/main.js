@@ -124,5 +124,5 @@ function showError(error, error_data) {
         console.error(error);
     }
 
-    document.querySelector('#mytoken').textContent = error;
+    document.querySelector('#alert-message').textContent = error;
 }
