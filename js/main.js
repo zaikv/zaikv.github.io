@@ -2,7 +2,7 @@
 
 if ('Notification' in window) {
   messaging.onMessage(function(payload) {
-    console.log('[firebase-messaging-sw.js] Received background message ', payload);
+    console.log('onMessage:', payload);
   });
 
   if (Notification.permission === 'granted') {
@@ -97,7 +97,6 @@ function sendNotification() {
                     // Firebase loses 'image' from the notification.
                     // And you must see this: https://github.com/firebase/quickstart-js/issues/71
                     notification: notification,
-                    time_to_live: 900,
                     to: currentToken
                 })
             }).then(function(response) {
